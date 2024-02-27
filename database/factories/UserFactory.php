@@ -24,10 +24,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'NIK' => $this->faker->unique()->numerify(str_repeat('#', 16)), // Membuat NIK dengan 16 angka
+            'password' => Hash::make('password'), // Menggunakan alat bantu pembuatan sandi
             'remember_token' => Str::random(10),
         ];
     }
