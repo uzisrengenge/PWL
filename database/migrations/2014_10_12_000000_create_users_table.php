@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->string('NIK')->primary(); // Menjadikan NIK sebagai primary key
             $table->string('password');
+            $table->string('level');
             $table->rememberToken();
             $table->timestamps();
         });

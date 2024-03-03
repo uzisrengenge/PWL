@@ -27,6 +27,7 @@ class UserFactory extends Factory
             'NIK' => $this->faker->unique()->numerify(str_repeat('#', 16)), // Membuat NIK dengan 16 angka
             'password' => Hash::make('password'), // Menggunakan alat bantu pembuatan sandi
             'remember_token' => Str::random(10),
+            'level' => 'user',
         ];
     }
 

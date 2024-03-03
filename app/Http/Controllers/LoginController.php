@@ -15,15 +15,12 @@ class LoginController extends Controller
     }
 
     //authenticate
-    public function postlogin(Request $request)
-    {
-        $credentials = $request->only('NIK', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+    public function postlogin(Request $request){
+        if(Auth::attempt(['nik' => $request->nik, 'password' => $request->password])){
+            return redirect('/home');
+        } else {
+            return redirect()->route('login');
         }
-
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
 }

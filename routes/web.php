@@ -13,6 +13,17 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::middleware(['auth', 'ceklevel:admin,user'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
+
+
+
+// Route::get('/p', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

@@ -16,8 +16,9 @@ class UserSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'NIK' => 'satu',
+            'NIK' => '12',
             'password' => Hash::make('password'),
+            'level' => 'admin',
 
 
         ]);

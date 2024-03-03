@@ -51,7 +51,7 @@
                                 <input id="NIK"
                                     type="text"
                                     class="form-control"
-                                    name="NIK"
+                                    name="nik"
                                     tabindex="1"
                                     required
                                     autofocus>
